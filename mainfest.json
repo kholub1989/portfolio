@@ -1,0 +1,10 @@
+{
+  "short_name": "Krisztian Holub portfolio.",
+  "name": "Krisztian Holub | UI/UX | Web Developer | Freelancer",
+  "description": "Hire Professional Web Developer. PHP, JavaScript, React, D3, jQuery, Node.js, SQL, MySQL, Firebase, MongoDB, Express.js, Redux, AJAX, JSON, WebAPI, WordPress, OOP, MVC, REST, HTML5, CSS3, Less and Sass.",
+  "version": "2.0",
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#0e1d2c"
+}
