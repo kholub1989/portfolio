@@ -1,26 +1,26 @@
 $(document).ready(function () {
   // Burger menu
-  $('.burger-menu').click(function (e) {
-    $(this).toggleClass('menu-on');
-    $('.nav').toggleClass('burger-active');
+  $(".burger-menu").click(function (e) {
+    $(this).toggleClass("menu-on");
+    $(".nav").toggleClass("burger-active");
     e.preventDefault();
   });
 
-  $(document).on('scroll', onScroll);
+  $(document).on("scroll", onScroll);
   // Smooth scroll
   $('a[href^="#"]')
     .not('[href="#"]')
     .not('[href="#0"]')
-    .on('click', function (e) {
-      $(document).off('scroll');
+    .on("click", function (e) {
+      $(document).off("scroll");
 
-      $('a').each(function () {
-        $(this).removeClass('nav-active');
+      $("a").each(function () {
+        $(this).removeClass("nav-active");
       });
-      $(this).addClass('nav-active');
+      $(this).addClass("nav-active");
       let target = this.hash;
       $target = $(target);
-      $('html, body')
+      $("html, body")
         .stop()
         .animate(
           {
@@ -29,7 +29,7 @@ $(document).ready(function () {
           800,
           function () {
             window.location.hash = target;
-            $(document).on('scroll', onScroll);
+            $(document).on("scroll", onScroll);
           }
         );
       e.preventDefault();
@@ -37,17 +37,17 @@ $(document).ready(function () {
 
   function onScroll(e) {
     const scrollPos = $(document).scrollTop();
-    $('.nav a').each(function () {
+    $(".nav a").each(function () {
       const currLink = $(this);
-      const refElement = $(currLink.attr('href'));
+      const refElement = $(currLink.attr("href"));
       if (
         refElement.position().top <= scrollPos &&
         refElement.position().top + refElement.height() > scrollPos
       ) {
-        $('.nav ul li a').removeClass('nav-active');
-        currLink.addClass('nav-active');
+        $(".nav ul li a").removeClass("nav-active");
+        currLink.addClass("nav-active");
       } else {
-        currLink.removeClass('nav-active');
+        currLink.removeClass("nav-active");
       }
     });
     e.preventDefault();
@@ -56,7 +56,7 @@ $(document).ready(function () {
 
 // Swiper
 const slidesView = $(window).width() < 900 ? 1 : 2;
-const swiper = new Swiper('.swiper-container', {
+const swiper = new Swiper(".swiper-container", {
   slidesPerView: slidesView,
   spaceBetween: 20,
   loop: true,
@@ -68,11 +68,11 @@ const swiper = new Swiper('.swiper-container', {
     onlyInViewport: false,
   },
   a11y: {
-    prevSlideMessage: 'Previous slide',
-    nextSlideMessage: 'Next slide',
+    prevSlideMessage: "Previous slide",
+    nextSlideMessage: "Next slide",
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
